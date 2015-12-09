@@ -22,7 +22,8 @@ shinyUI(fluidPage(
                        tableOutput("bot"),
                        
                        HTML("<p><br>The tabs for county and place level data tables provide more detailed information for each county or place. Statistics for counties were pulled from the U.S. Census Bureau's annual <a href = 'http://www.cdc.gov/nchs/nvss/bridged_race/data_documentation.htm#vintage2014'>Bridged-Race Postcensal Population Estimates,</a> which contain estimates of the resident population of the U.S. as of April 1, 2010 to July 1, 2014, based on the 2010 census. Statistics for places were pulled from the American Community Survey's <a href = 'http://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/'>five-year estimates</a> of places in Ohio for all ages from 2009 to 2013. Statistics for blocks were pulled from the Inter-university Consortium for Political and Social Research's (ICPSR) data on <a href = 'https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/33461?q=icpsr+33461&searchSource=icpsr-landing'>Census of Population and Housing for 2010</a>, which contains estimates based on answers to the 2010 Census questionaire.
-                            <br>This visualization was created by Abdalah El-Barrad and Danielle Keeton-Olsen for the Ohio Department of Mental Health and Addiction Services to gain a detailed understanding of teenage and young adult population throughout the state of Ohio.
+                            <br>This data visualization was prepared by Ohio University's Voinovich School of Leadership and Public Affairs to support the evaluation of Ohio Strategic Prevention Framework Partnerships for Success State and Tribal Initiative (SPF-PFS) in the state of Ohio. Funding for the SPF-PFS is provided by the Substance Abuse and Mental Health Services Administration's (SAMHSA) Center for Substance Abuse Prevention (CSAP); Funding Opportunity SP-14-004. The SPF-PFS in Ohio is administered by the Ohio Department of Mental Health and Addiction Services (OhioMHAS). Funding for the SPF-PFS evaluation is provided by Ohio Department of Mental Health and Addiction Services Grant #15151. Undergraduate Voinovich Research Scholars Mr. Abdalah El-Barrad and Ms. Danielle Keeton-Olsen created this data visualization under the direction of Associate Professor Dr. Anirudh Ruhil.
+                          <br>To learn more about this app, check out the GitHub account <a href = 'https://github.com/abdalah/OhioMinorities'>here</a>.
                             </p>")
               ),
               tabPanel("County Map",
@@ -40,7 +41,7 @@ shinyUI(fluidPage(
                               <br>Cuyahoga County, the county with the greatest minority population, displays automatically. Select any county from the dropdown menu to view it in detail. The slider allows one to subset the blocks to display only if they have a designated minimum minority population.</p>"),
                          sliderInput("daslider", "Minimum Size of Minority Population (Age 10-24)", min = 0, max = 50, value = 0),
                          selectInput("counts2", "Select a County", choices=levels(All), selected="Cuyahoga County")
-                         ),
+                       ),
                        
                        mainPanel(leafletOutput("myBlockmap", height = "700px"))
               ),
